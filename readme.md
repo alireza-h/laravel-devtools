@@ -2,7 +2,7 @@
 
 ## Installation
 
-```
+```bash
 $ composer require alireza-h/laravel-devtools
 ```
 
@@ -11,21 +11,29 @@ $ composer require alireza-h/laravel-devtools
 
 Migrate tables
 
-`php artisan migare`
+```bash
+$ php artisan migare
+```
 
 
 ### Publish
 
 Publish configs
 
-`php artisan vendor:publish --tag="devtools.config"`
+```bash
+$ php artisan vendor:publish --tag="devtools.config"
+```
 
 
 Publish assets
 
-`php artisan vendor:publish --tag="devtools.assets"`
+```bash
+$ php artisan vendor:publish --tag="devtools.assets"
+```
 
 
 Publish views to customize
 
-`php artisan vendor:publish --tag="devtools.views"`
+```bash
+$ php artisan vendor:publish --tag="devtools.views"
+```
