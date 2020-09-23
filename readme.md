@@ -7,9 +7,25 @@ $ composer require alireza-h/laravel-devtools
 ```
 
 
+### Migration
+
+Migrate tables
+
+`php artisna migare`
+
+
 ### Publish
+
+Publish configs
+
 `php artisan vendor:publish --tag="devtools.config"`
 
-`php artisan vendor:publish --tag="devtools.views"`
+
+Publish assets
 
 `php artisan vendor:publish --tag="devtools.assets"`
+
+
+Publish views to customize
+
+`php artisan vendor:publish --tag="devtools.views"`
