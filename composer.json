@@ -1,6 +1,6 @@
 {
-    "name": "alireza-h/laraveldevtools",
-    "description": ":package_description",
+    "name": "alireza-h/laravel-devtools",
+    "description": ":laravel devtools",
     "license": "license",
     "authors": [
         {
@@ -9,7 +9,7 @@
             "homepage": "https://github.com/alireza-h"
         }
     ],
-    "homepage": "https://github.com/alireza-h/laraveldevtools",
+    "homepage": "https://github.com/alireza-h/laravel-devtools",
     "keywords": ["Laravel", "LaravelDevTools"],
     "require": {
         "illuminate/support": "~5|~6|~7"
