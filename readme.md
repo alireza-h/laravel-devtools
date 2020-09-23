@@ -3,5 +3,5 @@
 ## Installation
 
 ```
-$ composer require alireza-h/laraveldevtools
+$ composer require alireza-h/laravel-devtools
 ```
