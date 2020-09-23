@@ -31,7 +31,7 @@ return [
     'error_logger' => [
         'enabled' => true,
         'engine' => 'db', // db | redis,
-        'preview' => env('ERROR_LOGGER_PREVIEW', 'ignition'), // whoops | ignition,
+        'preview' => env('DEVTOOLS_ERROR_LOGGER_PREVIEW', 'ignition'), // whoops | ignition,
         'error_count_to_notify' => [10, 100, 1000, 10000],
         'clear_older_than' => 3600 * 72,
         'types' => [
