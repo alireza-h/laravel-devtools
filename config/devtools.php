@@ -65,7 +65,7 @@ return [
         'enabled' => true,
         'envs' => [
             'local',
-            'demo',
+            //'demo',
         ],
     ],
 ];
