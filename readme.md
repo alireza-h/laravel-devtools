@@ -11,7 +11,7 @@ $ composer require alireza-h/laravel-devtools
 
 Migrate tables
 
-`php artisna migare`
+`php artisan migare`
 
 
 ### Publish
