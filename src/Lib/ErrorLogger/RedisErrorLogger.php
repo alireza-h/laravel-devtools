@@ -30,7 +30,7 @@ class RedisErrorLogger extends ErrorLogger
                 'type' => $type,
                 'message' => Redis::hGet($this->getErrorRedisKey($type), $id),
                 'count' => Redis::hGet($this->getCountRedisKey($type), $id),
-                'timestamp' => Redis::hGetAll($this->getTimeRedisKey($type), $id),
+                'timestamp' => Redis::hGet($this->getTimeRedisKey($type), $id),
                 'preview' => Redis::hGet($this->getPreviewRedisKey($type), $id),
             ],
             true
