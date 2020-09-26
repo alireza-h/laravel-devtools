@@ -61,7 +61,7 @@ abstract class ErrorLogger
                 $this->getIgnitionPreview($exception) :
                 $this->getWhoopsPreview($exception),
             0,
-            50000
+            1000000
         );
     }
 
