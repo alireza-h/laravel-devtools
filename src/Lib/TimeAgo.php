@@ -89,6 +89,10 @@ class TimeAgo
 
     private function flatten(array $timeAgo, bool $shorten = true): string
     {
+        if (in_array(current($timeAgo), ['yesterday', 'scheduled'])) {
+            return current($timeAgo);
+        }
+
         return !empty($timeAgo) ?
             array_reduce(array_keys($timeAgo), function ($result, $value) use ($timeAgo, $shorten) {
             return $result . (!empty($result) ? ', ' : '')
