@@ -17,7 +17,7 @@ use AlirezaH\LaravelDevTools\Http\Controllers\SchemaController;
 use AlirezaH\LaravelDevTools\Http\Controllers\CacheController;
 
 Route::group(['prefix' => config('devtools.route_prefix', 'devtools'), 'middleware' => ['web', 'devtools.auth']], function (\Illuminate\Routing\Router $router) {
-    Route::get('/', [DevController::class, 'index'])->name('devtools.index')->withoutMiddleware('auth.dev');
+    Route::get('/', [DevController::class, 'index'])->name('devtools.index')->withoutMiddleware('devtools.auth');
 
     Route::get('/phpinfo', [DevController::class, 'phpinfo'])->name('devtools.phpinfo');
 
@@ -25,8 +25,8 @@ Route::group(['prefix' => config('devtools.route_prefix', 'devtools'), 'middlewa
     Route::post('/tools', [DevController::class, 'postTools'])->name('devtools.tools.post');
     Route::post('/tools/login-as', [DevController::class, 'loginAs'])->name('devtools.tools.post.login-as');
 
-    Route::get('/password', [DevController::class, 'password'])->name('devtools.password')->withoutMiddleware('auth.dev');
-    Route::post('/password', [DevController::class, 'hash'])->name('devtools.hash')->withoutMiddleware('auth.dev');
+    Route::get('/password', [DevController::class, 'password'])->name('devtools.password')->withoutMiddleware('devtools.auth');
+    Route::post('/password', [DevController::class, 'hash'])->name('devtools.hash')->withoutMiddleware('devtools.auth');
 
     Route::get('/errors', [ErrorLogController::class, 'index'])->name('devtools.errors');
     Route::get('/errors/preview/{id}', [ErrorLogController::class, 'preview'])->name('devtools.errors.preview');
