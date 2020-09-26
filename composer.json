@@ -11,7 +11,7 @@
     "homepage": "https://github.com/alireza-h/laravel-devtools",
     "keywords": ["Laravel", "LaravelDevTools"],
     "require": {
-        "php": ">=7.0",
+        "php": ">=7.4.0",
         "illuminate/cookie": "^7|^8",
         "illuminate/database": "^7|^8",
         "illuminate/events": "^7|^8",
