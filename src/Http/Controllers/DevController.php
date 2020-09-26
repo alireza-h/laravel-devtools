@@ -14,7 +14,6 @@ class DevController extends Controller
 {
     public function index()
     {
-        Mail::to(['alireza.hosein@gmail.com'])->send(new CatchMe());
         return view('devtools::index');
     }
 
