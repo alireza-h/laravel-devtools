@@ -13,7 +13,7 @@
         }
     </style>
 
-    <title>Dev</title>
+    <title>Devtools</title>
 </head>
 <body>
 
