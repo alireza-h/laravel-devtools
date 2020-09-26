@@ -19,7 +19,7 @@ class CreateErrorLogsTable extends Migration
             $table->string('type');
             $table->string('message');
             $table->integer('count');
-            $table->text('preview');
+            $table->longText('preview');
             $table->timestamps();
         });
 
