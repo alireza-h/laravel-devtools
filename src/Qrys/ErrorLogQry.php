@@ -28,8 +28,8 @@ class ErrorLogQry extends Qry
                 'count' => $errorLogItem->count,
                 'timestamp' => $errorLogItem->timestamp,
                 'time' => $this->getTimeAgo($errorLogItem->timestamp),
-                'previewUrl' => route('dev.errors.preview', ['id' => $errorLogItem->key, 'type' => $type]),
-                'removeUrl' => route('dev.errors.remove', ['id' => $errorLogItem->key, 'type' => $type]),
+                'previewUrl' => route('devtools.errors.preview', ['id' => $errorLogItem->key, 'type' => $type]),
+                'removeUrl' => route('devtools.errors.remove', ['id' => $errorLogItem->key, 'type' => $type]),
             ];
         };
 
@@ -43,8 +43,8 @@ class ErrorLogQry extends Qry
         return [
             'errorLogs' => $errors,
             'urls' => [
-                'clear' => route('dev.errors.clear', ['type' => $type]),
-                'clearOld' => route('dev.errors.clear.old', ['type' => $type]),
+                'clear' => route('devtools.errors.clear', ['type' => $type]),
+                'clearOld' => route('devtools.errors.clear.old', ['type' => $type]),
             ]
         ];
     }

@@ -20,14 +20,14 @@
             @foreach($mails as $id => $mail)
                 <tr>
                     <td>
-                        <a href="{{ route('dev.mails.preview', ['id' => $mail->id]) }}" class="d-block" target="_blank">{{ $mail->subject ?: ':|' }}</a>
+                        <a href="{{ route('devtools.mails.preview', ['id' => $mail->id]) }}" class="d-block" target="_blank">{{ $mail->subject ?: ':|' }}</a>
                     </td>
                     <td>{!! implode('<br>', array_keys($mail->to)) !!}</td>
                     <td>{!! implode('<br>', array_keys($mail->from)) !!}</td>
                     <td>{{ $mail->content_type }}</td>
                     <td>{{ $mail->created_at }}</td>
                     <td>
-                        <a href="{{ route('dev.mails.remove', ['id' => $mail->id]) }}" class="text-danger">Remove</a>
+                        <a href="{{ route('devtools.mails.remove', ['id' => $mail->id]) }}" class="text-danger">Remove</a>
                     </td>
                 </tr>
             @endforeach

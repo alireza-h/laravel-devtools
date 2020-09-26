@@ -6,7 +6,7 @@
     @foreach($tagGroups as $key => $tags)
         <div class="mb-5">
             <h4>{{ ucfirst($key) }}</h4>
-            <form action="{{ route('dev.cache.flush') }}" method="post">
+            <form action="{{ route('devtools.cache.flush') }}" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="tags">Tags</label>
@@ -28,7 +28,7 @@
 
     <div class="mb-5">
         <h4>Etc</h4>
-        <form action="{{ route('dev.cache.flush') }}" method="post">
+        <form action="{{ route('devtools.cache.flush') }}" method="post">
             @csrf
             <div class="form-group">
                 <label for="etc">Cache tag</label>

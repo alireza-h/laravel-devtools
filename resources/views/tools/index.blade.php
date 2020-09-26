@@ -19,7 +19,7 @@
             </div>
         </form>
 
-        <form method="post" class="mb-5" action="{{ route('dev.tools.post.login-as') }}">
+        <form method="post" class="mb-5" action="{{ route('devtools.tools.post.login-as') }}">
             @csrf
             <div class="form-group">
                 <div class="input-group mb-3">

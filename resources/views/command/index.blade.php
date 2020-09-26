@@ -68,7 +68,7 @@
                             @endif
 
                             <div class="mt-5">
-                                <form action="{{ route('dev.commands.run', ['command' => $command['name']]) }}" method="get" target="_blank">
+                                <form action="{{ route('devtools.commands.run', ['command' => $command['name']]) }}" method="get" target="_blank">
                                     @csrf
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control"

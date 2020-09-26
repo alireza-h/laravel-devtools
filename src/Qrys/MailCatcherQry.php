@@ -18,7 +18,7 @@ class MailCatcherQry extends Qry
         return [
             'mails' => $mails,
             'urls' => [
-                'clear' => route('dev.mails.clear'),
+                'clear' => route('devtools.mails.clear'),
             ]
         ];
     }

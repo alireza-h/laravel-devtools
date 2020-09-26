@@ -89,7 +89,7 @@ class ErrorLogCmd extends Cmd
             [
                 '<!here>',
                 "Count: *$count*",
-                'Url: '.route('dev.errors.preview', ['id' => $id]),
+                'Url: '.route('devtools.errors.preview', ['id' => $id]),
                 'Env: '."`{$this->env()}`",
                 'Message: `'.get_class($exception).'` , '.$exception->getMessage(),
                 "File: {$exception->getFile()}:{$exception->getLine()}",
