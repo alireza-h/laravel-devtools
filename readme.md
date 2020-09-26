@@ -60,7 +60,6 @@ Create your own password (http://localhost:8000/dev-tools/password), add it to `
 
 ```
 'users' => [
-    // 'username' => password_hash('password', PASSWORD_DEFAULT)
     'your_username' => 'your_hashed_password',
 ],
 ```
