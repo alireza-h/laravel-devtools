@@ -51,3 +51,18 @@ public function report(Throwable $exception)
     parent::report($exception);
 }
 ```
+
+
+### Dev tools panel
+Navigate to http://localhost:8000/dev-tools
+
+Create your own password (http://localhost:8000/dev-tools/password), add it to `devtools.php` config file: 
+
+```
+'users' => [
+    // 'username' => password_hash('password', PASSWORD_DEFAULT)
+    'your_username' => 'your_hashed_password',
+],
+```
+
+and use this credentials for devtools panel
