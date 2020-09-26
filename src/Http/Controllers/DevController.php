@@ -6,9 +6,7 @@ namespace AlirezaH\LaravelDevTools\Http\Controllers;
 
 use AlirezaH\LaravelDevTools\Cmds\LoginAsCmd;
 use AlirezaH\LaravelDevTools\Qrys\DevQry;
-use App\Mail\CatchMe;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 
 class DevController extends Controller
 {
