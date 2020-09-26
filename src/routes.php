@@ -46,5 +46,5 @@ Route::group(['prefix' => config('devtools.route_prefix', 'devtools'), 'middlewa
     Route::get('/mails', [MailCatcherController::class, 'index'])->name('dev.mails.index');
     Route::get('/mails/preview/{id}', [MailCatcherController::class, 'preview'])->name('dev.mails.preview');
     Route::get('/mails/remove/{id}', [MailCatcherController::class, 'remove'])->name('dev.mails.remove');
-    Route::post('/mails/clear', [MailCatcherController::class, 'clear'])->name('dev.mails.clear');
+    Route::get('/mails/clear', [MailCatcherController::class, 'clear'])->name('dev.mails.clear');
 });
