@@ -97,10 +97,11 @@ class RedisErrorLogger extends ErrorLogger
     public function clearOld(string $type = 'error'): void
     {
         $allErrors = $this->getAllErrors($type);
-        foreach ($allErrors['times'] as $id => $time) {
-            $diff = now()->getTimestamp() - $allErrors['times'][$id];
+        /** @var ErrorLogItem $error */
+        foreach ($allErrors as $error) {
+            $diff = now()->getTimestamp() - $error->timestamp;
             if ($diff > $this->getClearOlderThan()) {
-                $this->remove($id, $type);
+                $this->remove($error->key, $type);
             }
         }
     }
