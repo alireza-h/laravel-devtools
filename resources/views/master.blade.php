@@ -57,6 +57,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('devtools.mails.index') }}">Mails</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('devtools.packages.index') }}">Packages</a>
+                    </li>
                     @foreach(config('devtools.custom_menu') as $menuItem)
                         @if($menuItem['active'])
                             <li class="nav-item">

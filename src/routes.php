@@ -9,6 +9,7 @@
 
 
 use AlirezaH\LaravelDevTools\Http\Controllers\MailCatcherController;
+use AlirezaH\LaravelDevTools\Http\Controllers\PackageController;
 use Illuminate\Support\Facades\Route;
 use AlirezaH\LaravelDevTools\Http\Controllers\DevController;
 use AlirezaH\LaravelDevTools\Http\Controllers\ErrorLogController;
@@ -47,4 +48,6 @@ Route::group(['prefix' => config('devtools.route_prefix', 'devtools'), 'middlewa
     Route::get('/mails/preview/{id}', [MailCatcherController::class, 'preview'])->name('devtools.mails.preview');
     Route::get('/mails/remove/{id}', [MailCatcherController::class, 'remove'])->name('devtools.mails.remove');
     Route::get('/mails/clear', [MailCatcherController::class, 'clear'])->name('devtools.mails.clear');
+
+    Route::get('/packages', [PackageController::class, 'index'])->name('devtools.packages.index');
 });
