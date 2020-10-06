@@ -21,7 +21,7 @@ class CreateMailCatchersTable extends Migration
             $table->string('content_type')->nullable(false);
             //$table->string('queue');
             //$table->string('delay');
-            $table->text('body')->nullable(false);
+            $table->longText('body')->nullable(false);
             $table->timestamps();
         });
     }
