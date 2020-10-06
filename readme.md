@@ -43,7 +43,7 @@ $ php artisan vendor:publish --tag="devtools.views"
 
 Add `(new ErrorLogCmd())->log($exception)` to `\App\Exceptions\Handler::report`
 
-```
+```php
 public function report(Throwable $exception)
 {
     (new ErrorLogCmd())->log($exception);
@@ -58,7 +58,7 @@ Navigate to http://localhost:8000/dev-tools
 
 Create your own password (http://localhost:8000/dev-tools/password), add it to `devtools.php` config file: 
 
-```
+```php
 'users' => [
     'your_username' => 'your_hashed_password',
 ],
