@@ -52,6 +52,14 @@ public function report(Throwable $exception)
 }
 ```
 
+Add `(new ErrorLogCmd())->log($exception)` to `\App\Providers\EventServiceProvider::boot`
+
+```php
+Queue::failing(function (JobFailed $event) {
+    (new ErrorLogCmd())->log($event->exception);
+});
+```
+
 
 ### Dev tools panel
 Navigate to http://localhost:8000/dev-tools
