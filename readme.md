@@ -12,7 +12,7 @@ $ composer require alireza-h/laravel-devtools
 Migrate tables
 
 ```bash
-$ php artisan migare
+$ php artisan migrate
 ```
 
 
