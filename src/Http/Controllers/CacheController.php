@@ -14,7 +14,7 @@ class CacheController extends Controller
     {
         return view(
             'devtools::cache.index',
-            ['tagGroups' => (new CachesQry())->getModelCacheTags()]
+            ['tagGroups' => (new CachesQry())->getCacheTags()]
         );
     }
 
