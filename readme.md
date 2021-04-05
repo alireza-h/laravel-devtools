@@ -1,5 +1,6 @@
 # LaravelDevTools
 
+![devtools preview](https://github.com/alireza-h/laravel-devtools/blob/master/devtools-preview.png)
 
 ### Features
 - Error Logger
