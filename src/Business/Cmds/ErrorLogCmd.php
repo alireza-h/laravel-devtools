@@ -1,7 +1,7 @@
 <?php
 
 
-namespace AlirezaH\LaravelDevTools\Cmds;
+namespace AlirezaH\LaravelDevTools\Business\Cmds;
 
 
 use AlirezaH\LaravelDevTools\Lib\ErrorLogger\ErrorLogger;

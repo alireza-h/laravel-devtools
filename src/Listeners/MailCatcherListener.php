@@ -15,17 +15,11 @@ class MailCatcherListener
 
     public function handle(MessageSending $message)
     {
-        if ($this->isProduction()) {
-            return true;
-        }
-
         if (in_array($this->env(), config('devtools.mail_catcher.envs'))) {
             $this->catch($message);
-
-            return false;
         }
 
-        return true;
+        return $this->isProduction() ?: false;
     }
 
     private function catch(MessageSending $message)

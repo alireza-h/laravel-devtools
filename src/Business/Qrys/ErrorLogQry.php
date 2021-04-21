@@ -1,7 +1,7 @@
 <?php
 
 
-namespace AlirezaH\LaravelDevTools\Qrys;
+namespace AlirezaH\LaravelDevTools\Business\Qrys;
 
 use AlirezaH\LaravelDevTools\Lib\ErrorLogger\ErrorLogger;
 use AlirezaH\LaravelDevTools\Lib\ErrorLogger\ErrorLogItem;

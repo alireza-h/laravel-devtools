@@ -4,8 +4,8 @@
 namespace AlirezaH\LaravelDevTools\Http\Controllers;
 
 
-use AlirezaH\LaravelDevTools\Cmds\LoginAsCmd;
-use AlirezaH\LaravelDevTools\Qrys\DevQry;
+use AlirezaH\LaravelDevTools\Business\Cmds\LoginAsCmd;
+use AlirezaH\LaravelDevTools\Business\Qrys\DevQry;
 use Illuminate\Http\Request;
 
 class DevController extends Controller

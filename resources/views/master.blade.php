@@ -41,7 +41,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarErrorDropdown">
                             <a class="dropdown-item" href="{{ route('devtools.errors', ['type' => 'error']) }}">Error</a>
                             @foreach(config('devtools.error_logger.types') as $type => $config)
-                                <a class="dropdown-item" href="{{ route('devtools.errors', ['type' => $type]) }}">{{ title_case($type) }}</a>
+                                <a class="dropdown-item" href="{{ route('devtools.errors', ['type' => $type]) }}">{{ ucfirst(str_replace('_', ' ', $type)) }}</a>
                             @endforeach
                         </div>
                     </li>

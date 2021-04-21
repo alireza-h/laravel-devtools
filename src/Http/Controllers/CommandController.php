@@ -4,7 +4,7 @@
 namespace AlirezaH\LaravelDevTools\Http\Controllers;
 
 
-use AlirezaH\LaravelDevTools\Qrys\CommandQry;
+use AlirezaH\LaravelDevTools\Business\Qrys\CommandQry;
 use Illuminate\Http\Request;
 
 class CommandController extends Controller

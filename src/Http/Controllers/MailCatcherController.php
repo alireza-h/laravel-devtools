@@ -4,8 +4,8 @@
 namespace AlirezaH\LaravelDevTools\Http\Controllers;
 
 
-use AlirezaH\LaravelDevTools\Cmds\MailCatcherCmd;
-use AlirezaH\LaravelDevTools\Qrys\MailCatcherQry;
+use AlirezaH\LaravelDevTools\Business\Cmds\MailCatcherCmd;
+use AlirezaH\LaravelDevTools\Business\Qrys\MailCatcherQry;
 use Illuminate\Http\Response;
 
 class MailCatcherController extends Controller

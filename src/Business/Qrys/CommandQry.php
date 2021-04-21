@@ -1,7 +1,7 @@
 <?php
 
 
-namespace AlirezaH\LaravelDevTools\Qrys;
+namespace AlirezaH\LaravelDevTools\Business\Qrys;
 
 
 use Illuminate\Support\Facades\Artisan;

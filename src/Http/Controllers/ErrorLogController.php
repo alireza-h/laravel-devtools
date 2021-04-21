@@ -4,8 +4,8 @@
 namespace AlirezaH\LaravelDevTools\Http\Controllers;
 
 
-use AlirezaH\LaravelDevTools\Cmds\ErrorLogCmd;
-use AlirezaH\LaravelDevTools\Qrys\ErrorLogQry;
+use AlirezaH\LaravelDevTools\Business\Cmds\ErrorLogCmd;
+use AlirezaH\LaravelDevTools\Business\Qrys\ErrorLogQry;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 

@@ -3,7 +3,7 @@
 /** @noinspection PhpUnhandledExceptionInspection */
 
 
-namespace AlirezaH\LaravelDevTools\Cmds;
+namespace AlirezaH\LaravelDevTools\Business\Cmds;
 
 
 use AlirezaH\LaravelDevTools\Entities\MailCatcher;

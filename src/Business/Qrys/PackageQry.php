@@ -2,7 +2,7 @@
 /** @noinspection PhpDynamicAsStaticMethodCallInspection */
 
 
-namespace AlirezaH\LaravelDevTools\Qrys;
+namespace AlirezaH\LaravelDevTools\Business\Qrys;
 
 use Illuminate\Support\Facades\File;
 

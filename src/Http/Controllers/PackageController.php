@@ -4,7 +4,7 @@
 namespace AlirezaH\LaravelDevTools\Http\Controllers;
 
 
-use AlirezaH\LaravelDevTools\Qrys\PackageQry;
+use AlirezaH\LaravelDevTools\Business\Qrys\PackageQry;
 
 class PackageController extends Controller
 {
