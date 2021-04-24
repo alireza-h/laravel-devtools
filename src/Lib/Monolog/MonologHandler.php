@@ -4,7 +4,6 @@ namespace AlirezaH\LaravelDevTools\Lib\Monolog;
 
 
 use AlirezaH\LaravelDevTools\Business\Cmds\ErrorLogCmd;
-use App\Events\Logs\LogMonologEvent;
 use Exception;
 use Monolog\Handler\AbstractProcessingHandler;
 use Throwable;
