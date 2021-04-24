@@ -3,7 +3,7 @@
 ![devtools preview](https://github.com/alireza-h/laravel-devtools/blob/master/devtools-preview.png)
 
 ### Features
-- Error Logger
+- Error Logger (with whoops or ignition preview)
 - Commands panel
 - DB Schema panel, MySql or SQLite
 - Cache panel, flush cache tags and cache keys
@@ -63,6 +63,15 @@ public function report(Throwable $exception)
 
     parent::report($exception);
 }
+```
+
+Or add devtools custom log channel to `logging.php` config file and use it
+
+```php
+'devtools' => [
+    'driver' => 'custom',
+    'via' => \AlirezaH\LaravelDevTools\Lib\Monolog\MonologLogger::class,
+]
 ```
 
 Add `(new ErrorLogCmd())->log($exception)` to `\App\Providers\EventServiceProvider::boot`
