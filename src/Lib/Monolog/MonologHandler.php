@@ -4,8 +4,8 @@ namespace AlirezaH\LaravelDevTools\Lib\Monolog;
 
 
 use AlirezaH\LaravelDevTools\Business\Cmds\ErrorLogCmd;
-use Exception;
 use Monolog\Handler\AbstractProcessingHandler;
+use Exception;
 use Throwable;
 
 class MonologHandler extends AbstractProcessingHandler
