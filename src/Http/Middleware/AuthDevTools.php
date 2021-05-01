@@ -8,6 +8,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AuthDevTools
 {
+    public const AUTHENTICATED_SESSION_KEY = 'authenticated';
+
     private const HEADER_WWW_AUTHENTICATE = ['WWW-Authenticate' => 'Basic realm="Dev"'];
     private const HEADER_PHP_AUTH_USER = 'PHP_AUTH_USER';
     private const HEADER_PHP_AUTH_PW = 'PHP_AUTH_PW';
@@ -21,9 +23,13 @@ class AuthDevTools
 
     public function handle(Request $request, Closure $next)
     {
+        $request->session()->forget(self::AUTHENTICATED_SESSION_KEY);
+
         if (!$this->authenticate($request)) {
             return new Response('Invalid credentials.', 401, self::HEADER_WWW_AUTHENTICATE);
         }
+
+        $request->session()->put(self::AUTHENTICATED_SESSION_KEY, 1);
 
         return $next($request);
     }

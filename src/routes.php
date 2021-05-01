@@ -18,7 +18,7 @@ use AlirezaH\LaravelDevTools\Http\Controllers\SchemaController;
 use AlirezaH\LaravelDevTools\Http\Controllers\CacheController;
 
 Route::group(['prefix' => config('devtools.route_prefix', 'devtools'), 'middleware' => ['web', 'devtools.auth']], function (\Illuminate\Routing\Router $router) {
-    Route::get('/', [DevController::class, 'index'])->name('devtools.index')->withoutMiddleware('devtools.auth');
+    Route::get('/', [DevController::class, 'index'])->name('devtools.index');
 
     Route::get('/phpinfo', [DevController::class, 'phpinfo'])->name('devtools.phpinfo');
 
