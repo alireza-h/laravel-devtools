@@ -28,6 +28,8 @@ class CommandQry extends Qry
 
     public function run(string $command)
     {
+        $this->assert403(!$this->isProduction());
+
         ob_start();
         Artisan::call(addslashes($command));
         echo Artisan::output();
