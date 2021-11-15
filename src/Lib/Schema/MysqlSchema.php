@@ -10,7 +10,9 @@ class MysqlSchema extends Schema
 {
     protected function tables(): array
     {
-        return array_map('reset', DB::select('SHOW TABLES'));
+        return array_map(function ($table) {
+            return reset($table);
+        }, DB::select('SHOW TABLES'));
     }
 
     protected function fields(string $table): array
