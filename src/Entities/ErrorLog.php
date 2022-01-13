@@ -3,7 +3,6 @@
 
 namespace AlirezaH\LaravelDevTools\Entities;
 
-
 /**
  * Class ErrorLog
  * @package AlirezaH\LaravelDevTools\Entities

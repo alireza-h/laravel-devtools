@@ -2,9 +2,7 @@
 /** @noinspection PhpDynamicAsStaticMethodCallInspection */
 /** @noinspection PhpUnhandledExceptionInspection */
 
-
 namespace AlirezaH\LaravelDevTools\Business\Cmds;
-
 
 use AlirezaH\LaravelDevTools\Entities\MailCatcher;
 

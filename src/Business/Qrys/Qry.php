@@ -1,8 +1,6 @@
 <?php
 
-
 namespace AlirezaH\LaravelDevTools\Business\Qrys;
-
 
 use AlirezaH\LaravelDevTools\Lib\Env;
 use AlirezaH\LaravelDevTools\Lib\Helpers;

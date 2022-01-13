@@ -1,8 +1,6 @@
 <?php
 
-
 namespace AlirezaH\LaravelDevTools\Business\Cmds;
-
 
 use AlirezaH\LaravelDevTools\Lib\ErrorLogger\ErrorLogger;
 use Illuminate\Support\Facades\Log;
@@ -41,7 +39,7 @@ class ErrorLogCmd extends Cmd
         $logType = $this->getLogType($exception);
         $this->errorLogger->logError($exception, $logType['type']);
 
-        $logType['logToSlack'] && $this->logToSlack($exception);
+        $logType['log_to_slack'] && $this->logToSlack($exception);
     }
 
     private function logToSlack(Throwable $exception)
@@ -71,14 +69,14 @@ class ErrorLogCmd extends Cmd
             if (in_array(get_class($exception), $config['exceptions'])) {
                 return [
                     'type' => $type,
-                    'logToSlack' => $config['logToSlack']
+                    'log_to_slack' => $config['log_to_slack']
                 ];
             }
         }
 
         return [
             'type' => 'error',
-            'logToSlack' => true
+            'log_to_slack' => true
         ];
     }
 

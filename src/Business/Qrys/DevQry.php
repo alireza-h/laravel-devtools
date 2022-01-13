@@ -1,8 +1,6 @@
 <?php
 
-
 namespace AlirezaH\LaravelDevTools\Business\Qrys;
-
 
 class DevQry extends Qry
 {

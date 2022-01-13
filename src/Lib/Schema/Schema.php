@@ -1,8 +1,6 @@
 <?php
 
-
 namespace AlirezaH\LaravelDevTools\Lib\Schema;
-
 
 abstract class Schema
 {

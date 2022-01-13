@@ -1,8 +1,6 @@
 <?php
 
-
 namespace AlirezaH\LaravelDevTools\Http\Controllers;
-
 
 use AlirezaH\LaravelDevTools\Business\Cmds\CacheCmd;
 use AlirezaH\LaravelDevTools\Business\Qrys\CachesQry;

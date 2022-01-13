@@ -1,13 +1,10 @@
 <?php
 
-
 namespace AlirezaH\LaravelDevTools\Lib\ErrorLogger;
-
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Redis;
 use Throwable;
-
 
 class RedisErrorLogger extends ErrorLogger
 {

@@ -1,9 +1,7 @@
 <?php
 /** @noinspection PhpDynamicAsStaticMethodCallInspection */
 
-
 namespace AlirezaH\LaravelDevTools\Lib\ErrorLogger;
-
 
 use AlirezaH\LaravelDevTools\Entities\ErrorLog;
 use Illuminate\Support\Collection;

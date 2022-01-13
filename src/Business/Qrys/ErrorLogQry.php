@@ -1,6 +1,5 @@
 <?php
 
-
 namespace AlirezaH\LaravelDevTools\Business\Qrys;
 
 use AlirezaH\LaravelDevTools\Lib\ErrorLogger\ErrorLogger;
@@ -31,7 +30,7 @@ class ErrorLogQry extends Qry
                 'previewUrl' => route('devtools.errors.preview', ['id' => $errorLogItem->key, 'type' => $type]),
                 'removeUrl' => route('devtools.errors.remove', ['id' => $errorLogItem->key, 'type' => $type]),
             ];
-        };
+        }
 
         uasort(
             $errors,

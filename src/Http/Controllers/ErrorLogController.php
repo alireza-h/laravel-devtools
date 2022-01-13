@@ -1,8 +1,6 @@
 <?php
 
-
 namespace AlirezaH\LaravelDevTools\Http\Controllers;
-
 
 use AlirezaH\LaravelDevTools\Business\Cmds\ErrorLogCmd;
 use AlirezaH\LaravelDevTools\Business\Qrys\ErrorLogQry;

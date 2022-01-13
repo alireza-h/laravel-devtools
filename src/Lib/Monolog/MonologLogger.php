@@ -2,7 +2,6 @@
 
 namespace AlirezaH\LaravelDevTools\Lib\Monolog;
 
-
 use Monolog\Logger;
 
 class MonologLogger

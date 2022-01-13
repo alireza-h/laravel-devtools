@@ -1,8 +1,6 @@
 <?php
 
-
 namespace AlirezaH\LaravelDevTools\Lib;
-
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;

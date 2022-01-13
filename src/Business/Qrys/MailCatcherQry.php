@@ -1,7 +1,6 @@
 <?php
 /** @noinspection PhpDynamicAsStaticMethodCallInspection */
 
-
 namespace AlirezaH\LaravelDevTools\Business\Qrys;
 
 use AlirezaH\LaravelDevTools\Entities\MailCatcher;

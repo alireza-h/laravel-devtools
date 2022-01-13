@@ -1,8 +1,6 @@
 <?php
 
-
 namespace AlirezaH\LaravelDevTools\Http\Controllers;
-
 
 use AlirezaH\LaravelDevTools\Business\Qrys\PackageQry;
 

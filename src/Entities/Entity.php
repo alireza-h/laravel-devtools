@@ -3,7 +3,6 @@
 
 namespace AlirezaH\LaravelDevTools\Entities;
 
-
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;

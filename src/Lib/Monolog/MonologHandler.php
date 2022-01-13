@@ -2,7 +2,6 @@
 
 namespace AlirezaH\LaravelDevTools\Lib\Monolog;
 
-
 use AlirezaH\LaravelDevTools\Business\Cmds\ErrorLogCmd;
 use Monolog\Handler\AbstractProcessingHandler;
 use Exception;

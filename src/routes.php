@@ -7,7 +7,6 @@
 |
 */
 
-
 use AlirezaH\LaravelDevTools\Http\Controllers\MailCatcherController;
 use AlirezaH\LaravelDevTools\Http\Controllers\PackageController;
 use Illuminate\Support\Facades\Route;

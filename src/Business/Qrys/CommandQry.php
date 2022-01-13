@@ -1,8 +1,6 @@
 <?php
 
-
 namespace AlirezaH\LaravelDevTools\Business\Qrys;
-
 
 use Illuminate\Support\Facades\Artisan;
 use Symfony\Component\Console\Command\Command;

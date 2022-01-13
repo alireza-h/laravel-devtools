@@ -1,8 +1,6 @@
 <?php
 
-
 namespace AlirezaH\LaravelDevTools\Business\Cmds;
-
 
 use Illuminate\Support\Facades\Auth;
 

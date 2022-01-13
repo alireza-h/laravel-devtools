@@ -1,8 +1,6 @@
 <?php
 
-
 namespace AlirezaH\LaravelDevTools\Lib\ErrorLogger;
-
 
 class ErrorLogItem
 {

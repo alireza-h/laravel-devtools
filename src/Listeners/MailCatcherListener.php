@@ -1,9 +1,7 @@
 <?php
 /** @noinspection PhpDynamicAsStaticMethodCallInspection */
 
-
 namespace AlirezaH\LaravelDevTools\Listeners;
-
 
 use AlirezaH\LaravelDevTools\Entities\MailCatcher;
 use AlirezaH\LaravelDevTools\Lib\Env;
@@ -19,7 +17,7 @@ class MailCatcherListener
             $this->catch($message);
         }
 
-        return $this->isProduction() ?: false;
+        return $this->isProduction();
     }
 
     private function catch(MessageSending $message)
