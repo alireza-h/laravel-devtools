@@ -1,11 +1,13 @@
 <?php
 
-use GuzzleHttp\Exception\ClientException;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Http\Exceptions\MaintenanceModeException;
+use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Session\TokenMismatchException;
-use Illuminate\Validation\ValidationException as LaravelValidationException;
+use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpFoundation\Exception\SuspiciousOperationException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -38,22 +40,26 @@ return [
             'warning' => [
                 'log_to_slack' => false,
                 'exceptions' => [
-                    ClientException::class,
-                    LaravelValidationException::class,
                     MaintenanceModeException::class,
-                    TokenMismatchException::class,
-                    HttpException::class,
                     MethodNotAllowedHttpException::class,
-                    AuthenticationException::class,
                 ]
             ],
             'not_found' => [
                 'log_to_slack' => false,
                 'exceptions' => [
-                    ModelNotFoundException::class,
                     NotFoundHttpException::class,
                 ]
             ]
+        ],
+        'dont_log' => [ // don't log list of these exception types
+            AuthenticationException::class,
+            AuthorizationException::class,
+            HttpException::class,
+            HttpResponseException::class,
+            ModelNotFoundException::class,
+            SuspiciousOperationException::class,
+            TokenMismatchException::class,
+            ValidationException::class,
         ]
     ],
 

@@ -114,7 +114,17 @@ Add devtools custom log channel to `logging.php` config file and use it
                 ModelNotFoundException::class,
                 NotFoundHttpException::class,
             ]
-        ]
+        ],
+    ],
+    'dont_log' => [ // don't log list of these exception types
+        AuthenticationException::class,
+        AuthorizationException::class,
+        HttpException::class,
+        HttpResponseException::class,
+        ModelNotFoundException::class,
+        SuspiciousOperationException::class,
+        TokenMismatchException::class,
+        ValidationException::class,
     ]
 ],
 ```
@@ -127,6 +137,7 @@ Add devtools custom log channel to `logging.php` config file and use it
 - `types` categorize error logs and define each type exceptions
   - `log_to_slack` enable or disable log to slack
   - `exceptions` list of exception classes
+- `dont_log` don't log list of defined exception types
 
 
 #### Mail Catcher

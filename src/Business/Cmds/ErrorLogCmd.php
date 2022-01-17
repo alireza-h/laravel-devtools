@@ -15,24 +15,28 @@ class ErrorLogCmd extends Cmd
         $this->errorLogger = $this->app(ErrorLogger::class);
     }
 
-    public function remove(string $id, string $type = 'error')
+    public function remove(string $id, string $type = 'error'): void
     {
         $this->errorLogger->remove($id, $type);
     }
 
-    public function clear(string $type = 'error')
+    public function clear(string $type = 'error'): void
     {
         $this->errorLogger->clear($type);
     }
 
-    public function clearOld(string $type = 'error')
+    public function clearOld(string $type = 'error'): void
     {
         $this->errorLogger->clearOld($type);
     }
 
-    public function log(Throwable $exception)
+    public function log(Throwable $exception): void
     {
         if (!config('devtools.error_logger.enabled')) {
+            return;
+        }
+
+        if ($this->shouldntLog($exception)) {
             return;
         }
 
@@ -42,7 +46,12 @@ class ErrorLogCmd extends Cmd
         $logType['log_to_slack'] && $this->logToSlack($exception);
     }
 
-    private function logToSlack(Throwable $exception)
+    private function shouldntLog(Throwable $exception): bool
+    {
+        return in_array(get_class($exception), config('devtools.error_logger.dont_log', []));
+    }
+
+    private function logToSlack(Throwable $exception): void
     {
         if (!$this->isProduction()) {
             return;
@@ -80,7 +89,7 @@ class ErrorLogCmd extends Cmd
         ];
     }
 
-    private function createExceptionMessage(Throwable $exception, int $count, string $id)
+    private function createExceptionMessage(Throwable $exception, int $count, string $id): string
     {
         return implode(
             PHP_EOL,
