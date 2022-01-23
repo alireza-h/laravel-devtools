@@ -135,7 +135,7 @@ Add devtools custom log channel to `logging.php` config file and use it
 - `error_count_to_notify` error count boundaries to notify error in slack
 - `clear_older_than` clear error logs older than this value (in seconds) 
 - `types` categorize error logs and define each type exceptions
-  - `log_to_slack` enable or disable log to slack
+  - `log_to_slack` enable or disable log to slack; you need to configure logging slack channel (`LOG_SLACK_WEBHOOK_URL` in `logging.php` config file)
   - `exceptions` list of exception classes
 - `dont_log` don't log list of defined exception types
 
