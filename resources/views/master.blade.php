@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="{{ asset('vendor/devtools/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/devtools/bootstrap/css/dataTables.bootstrap4.min.css') }}">
 
     <style>
         table {
@@ -54,9 +55,16 @@
         </div>
     </main>
 
-    <script src="{{ asset('vendor/devtools/bootstrap/js/jquery-3.4.1.slim.min.js') }}"></script>
+    <script src="{{ asset('vendor/devtools/bootstrap/js/jquery-3.5.1.slim.min.js') }}"></script>
     <script src="{{ asset('vendor/devtools/bootstrap/js/popper.min.js') }}"></script>
     <script src="{{ asset('vendor/devtools/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('vendor/devtools/bootstrap/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('vendor/devtools/bootstrap/js/dataTables.bootstrap4.min.js') }}"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.table').DataTable();
+        });
+    </script>
 </body>
 </html>

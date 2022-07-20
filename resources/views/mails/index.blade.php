@@ -7,7 +7,8 @@
         <a href="{{ $urls['clear'] }}" class="btn btn-danger">Clear</a>
     </div>
     <div class="table-responsive">
-        <table class="table table-borderless table-striped table-hover">
+        <table class="table table-borderless table-striped table-hover" style="width:100%">
+            <thead>
             <tr>
                 <th>Subject</th>
                 <th>To</th>
@@ -15,7 +16,7 @@
                 <th>Content-Type</th>
                 <th>At</th>
                 <th>Actions</th>
-            </tr>
+            </thead>
             <tbody>
             @foreach($mails as $id => $mail)
                 <tr>

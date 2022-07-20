@@ -9,12 +9,14 @@
     </div>
     <div class="table-responsive">
         <table class="table table-borderless table-striped table-hover">
+            <thead>
             <tr>
                 <th>Error</th>
                 <th>Count</th>
                 <th>Time</th>
                 <th>Actions</th>
             </tr>
+            </thead>
             <tbody>
             @foreach($errorLogs as $id => $error)
                 <tr>
