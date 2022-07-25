@@ -23,7 +23,7 @@
                     </td>
                     <td>{{ $error['count'] }}</td>
                     <td>
-                        <span class="text-muted">{{ $error['time'] ?? '-' }}</span>
+                        <span class="text-muted">{!! nl2br($error['time'] ?? '-') !!}</span>
                     </td>
                     <td>
                         <a href="{{ $error['removeUrl'] }}" class="text-danger">Remove</a>
