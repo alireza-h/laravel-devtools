@@ -4,8 +4,8 @@ namespace AlirezaH\LaravelDevTools\Business\Qrys;
 
 use AlirezaH\LaravelDevTools\Lib\ErrorLogger\ErrorLogger;
 use AlirezaH\LaravelDevTools\Lib\ErrorLogger\ErrorLogItem;
-use AlirezaH\LaravelDevTools\Lib\TimeAgo;
 use DateTime;
+use Illuminate\Support\Carbon;
 
 class ErrorLogQry extends Qry
 {
@@ -26,7 +26,10 @@ class ErrorLogQry extends Qry
                 'error' => substr($errorLogItem->message ?? '', 0, 150),
                 'count' => $errorLogItem->count,
                 'timestamp' => $errorLogItem->timestamp,
-                'time' => $this->getTimeAgo($errorLogItem->timestamp),
+                'time' => Carbon::createFromTimestamp($errorLogItem->timestamp)
+                        ->locale('en')
+                        ->diffForHumans(['short' => true, 'parts' => 3]) .
+                    PHP_EOL . (new DateTime())->setTimestamp($errorLogItem->timestamp)->format('Y-m-d H:i:s'),
                 'previewUrl' => route('devtools.errors.preview', ['id' => $errorLogItem->key, 'type' => $type]),
                 'removeUrl' => route('devtools.errors.remove', ['id' => $errorLogItem->key, 'type' => $type]),
             ];
@@ -34,7 +37,7 @@ class ErrorLogQry extends Qry
 
         uasort(
             $errors,
-            function ($a, $b) {
+            static function ($a, $b) {
                 return $a['timestamp'] < $b['timestamp'];
             }
         );
@@ -48,16 +51,8 @@ class ErrorLogQry extends Qry
         ];
     }
 
-    public function getError(string $id, string $type = 'error')
+    public function getError(string $id, string $type = 'error'): ErrorLogItem
     {
         return $this->errorLogger->getError($id, $type);
-    }
-
-    private function getTimeAgo(string $timestamp): string
-    {
-        return (new TimeAgo())->getTimeAgoString(
-            (new DateTime())->setTimestamp($timestamp),
-            2
-        );
     }
 }
