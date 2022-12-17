@@ -43,7 +43,7 @@ class ErrorLogCmd extends Cmd
         $logType = $this->getLogType($exception);
         $this->errorLogger->logError($exception, $logType['type']);
 
-        $logType['log_to_slack'] && $this->logToSlack($exception);
+        $logType['log_to_slack'] && $this->logToSlack($exception, $logType['type']);
     }
 
     private function shouldntLog(Throwable $exception): bool
@@ -51,13 +51,13 @@ class ErrorLogCmd extends Cmd
         return in_array(get_class($exception), config('devtools.error_logger.dont_log', []));
     }
 
-    private function logToSlack(Throwable $exception): void
+    private function logToSlack(Throwable $exception, string $type = 'error'): void
     {
         if (!$this->isProduction()) {
             return;
         }
 
-        $errorCount = $this->errorLogger->getErrorCount($exception);
+        $errorCount = $this->errorLogger->getErrorCount($exception, $type);
 
         if (!in_array($errorCount, config('devtools.error_logger.error_count_to_notify', []))) {
             return;
