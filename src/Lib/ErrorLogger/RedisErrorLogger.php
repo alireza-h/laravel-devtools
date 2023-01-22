@@ -42,7 +42,7 @@ class RedisErrorLogger extends ErrorLogger
         Redis::hSet($this->getPreviewRedisKey($type), $id, $this->getPreview($exception));
         Redis::hSet($this->getTimeRedisKey($type), $id, time());
 
-        $count = Redis::hGet($this->getCountRedisKey($type), $id) ?? 0;
+        $count = Redis::hGet($this->getCountRedisKey($type), $id) ?: 0;
         Redis::hSet($this->getCountRedisKey($type), $id, ++$count);
     }
 
