@@ -2,6 +2,8 @@
 
 namespace AlirezaH\LaravelDevTools\Business\Qrys;
 
+use Illuminate\Support\Arr;
+
 class DevQry extends Qry
 {
     private const TOOLS_TYPE_MODEL = 'model';
@@ -21,7 +23,7 @@ class DevQry extends Qry
                     $data['id']
                 ) : $data['class']::find($data['id']);
                 dd(
-                    array_only($data, ['id', 'class', 'with']),
+                    Arr::only($data, ['id', 'class', 'with']),
                     $model
                 );
         }
