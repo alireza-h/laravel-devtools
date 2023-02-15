@@ -51,6 +51,10 @@ abstract class ErrorLogger
 
     protected function getPreview(Throwable $exception): string
     {
-        return app(ExceptionRenderer::class)->render($exception);
+        return substr(
+            app(ExceptionRenderer::class)->render($exception),
+            0,
+            1000000
+        );
     }
 }
