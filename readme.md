@@ -19,6 +19,8 @@
 
 ### Installation
 
+_For Laravel <=9 check 1.x version_
+
 ```bash
 $ composer require alireza-h/laravel-devtools
 ```
