@@ -12,7 +12,7 @@
     "keywords": ["Laravel", "LaravelDevTools"],
     "require": {
         "php": "^7.4|^8.0",
-        "laravel/framework": "^7.0|^8.0|^9.0",
+        "laravel/framework": "^7.0|^8.0|^9.0|^10",
         "predis/predis": "^1.0",
         "filp/whoops": "^2.0"
     },
