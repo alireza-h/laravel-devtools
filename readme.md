@@ -9,7 +9,7 @@
 
 ### Features
 
-- Error Logger (with whoops or ignition preview)
+- Error Logger with ignition
 - Commands panel
 - DB Schema panel, MySql or SQLite
 - Cache panel, flush cache tags and cache keys
@@ -92,7 +92,6 @@ Add devtools custom log channel to `logging.php` config file and use it
 'error_logger' => [
     'enabled' => true,
     'engine' => 'db', // db | redis,
-    'preview' => env('DEVTOOLS_ERROR_LOGGER_PREVIEW', 'ignition'), // whoops | ignition,
     'error_count_to_notify' => [10, 100, 1000, 10000],
     'clear_older_than' => 3600 * 72,
     'types' => [
@@ -101,7 +100,6 @@ Add devtools custom log channel to `logging.php` config file and use it
             'exceptions' => [
                 ClientException::class,
                 LaravelValidationException::class,
-                MaintenanceModeException::class,
                 TokenMismatchException::class,
                 HttpException::class,
                 MethodNotAllowedHttpException::class,
@@ -131,7 +129,6 @@ Add devtools custom log channel to `logging.php` config file and use it
 
 - `enabled` enable or disable devtools error logger
 - `engine` store logs in `redis` or in `db`
-- `preview` preview errors and stack trace by `whoops` or `ignition`
 - `error_count_to_notify` error count boundaries to notify error in slack
 - `clear_older_than` clear error logs older than this value (in seconds) 
 - `types` categorize error logs and define each type exceptions
