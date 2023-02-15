@@ -9,16 +9,16 @@ use Throwable;
 
 class MonologHandler extends AbstractProcessingHandler
 {
-    protected function write(array $record): void
+    protected function write(\Monolog\LogRecord $record): void
     {
         (new ErrorLogCmd())->log(
-            $this->getThrowable($record) ?? new Exception($record['message'])
+            $this->getThrowable($record) ?? new Exception($record->message)
         );
     }
 
-    private function getThrowable(array $record): ?Throwable
+    private function getThrowable(\Monolog\LogRecord $record): ?Throwable
     {
-        return !empty($record['context']['exception']) && $record['context']['exception'] instanceof Throwable ?
-            $record['context']['exception'] : null;
+        return !empty($record->context['exception']) && $record->context['exception'] instanceof Throwable ?
+            $record->context['exception'] : null;
     }
 }
