@@ -1,4 +1,5 @@
 <?php
+
 /** @noinspection PhpDynamicAsStaticMethodCallInspection */
 
 namespace AlirezaH\LaravelDevTools\Listeners;
@@ -27,8 +28,8 @@ class MailCatcherListener
                 'to' => $message->message->getTo(),
                 'from' => $message->message->getFrom(),
                 'subject' => $message->message->getSubject(),
-                'content_type' => $message->message->getBodyContentType(),
-                'body' => $message->message->getBody(),
+                'content_type' => $message->message->getBody()->getMediaSubtype(),
+                'body' => $message->message->getBody()->getBody(),
                 // 'queue' => $message->data['queue'],
                 // 'delay' => $message->data['delay'],
             ]
