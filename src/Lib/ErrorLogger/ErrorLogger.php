@@ -54,7 +54,7 @@ abstract class ErrorLogger
         return substr(
             app(ExceptionRenderer::class)->render($exception),
             0,
-            1000000
+            1500000
         );
     }
 }
