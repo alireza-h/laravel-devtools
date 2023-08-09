@@ -19,13 +19,19 @@ class RedisErrorLogger extends ErrorLogger
         self::ERROR_LOGS_TIME_PREFIX,
     ];
 
-    public function getError(string $id, string $type = 'error'): ErrorLogItem
+    public function getError(string $id, string $type = 'error'): ?ErrorLogItem
     {
+        $message = Redis::hGet($this->getErrorRedisKey($type), $id);
+
+        if ($message === null) {
+            return null;
+        }
+
         return $this->getErrorLogItem(
             [
                 'key' => $id,
                 'type' => $type,
-                'message' => Redis::hGet($this->getErrorRedisKey($type), $id),
+                'message' => $message,
                 'count' => Redis::hGet($this->getCountRedisKey($type), $id),
                 'timestamp' => Redis::hGet($this->getTimeRedisKey($type), $id),
                 'preview' => Redis::hGet($this->getPreviewRedisKey($type), $id),
@@ -103,7 +109,7 @@ class RedisErrorLogger extends ErrorLogger
         }
     }
 
-    private function getAllRedisKeys(string $type = 'error')
+    private function getAllRedisKeys(string $type = 'error'): array
     {
         $keys[] = $this->getRedisKeyPrefix($type);
         foreach (self::ERROR_LOGS_KEYS_PREFIX_ALL as $key) {
@@ -113,32 +119,32 @@ class RedisErrorLogger extends ErrorLogger
         return $keys;
     }
 
-    private function getErrorRedisKey(string $type = 'error')
+    private function getErrorRedisKey(string $type = 'error'): string
     {
         return $this->getRedisKeyPrefix($type);
     }
 
-    private function getPreviewRedisKey(string $type = 'error')
+    private function getPreviewRedisKey(string $type = 'error'): string
     {
         return $this->getRedisKeyPrefix($type, self::ERROR_LOGS_PREVIEW_PREFIX);
     }
 
-    private function getTimeRedisKey(string $type = 'error')
+    private function getTimeRedisKey(string $type = 'error'): string
     {
         return $this->getRedisKeyPrefix($type, self::ERROR_LOGS_TIME_PREFIX);
     }
 
-    private function getCountRedisKey(string $type = 'error')
+    private function getCountRedisKey(string $type = 'error'): string
     {
         return $this->getRedisKeyPrefix($type, self::ERROR_LOGS_COUNT_PREFIX);
     }
 
-    private function getRedisKeyPrefix(string $type = 'error', string $append = '')
+    private function getRedisKeyPrefix(string $type = 'error', string $append = ''): string
     {
-        return $type ? self::ERROR_LOGS.':'.$type.$append : self::ERROR_LOGS.$append;
+        return $type ? self::ERROR_LOGS . ':' . $type . $append : self::ERROR_LOGS . $append;
     }
 
-    private function getErrorLogItem(array $errorLog, bool $withPreview = false)
+    private function getErrorLogItem(array $errorLog, bool $withPreview = false): ErrorLogItem
     {
         return new ErrorLogItem(
             $errorLog['key'],

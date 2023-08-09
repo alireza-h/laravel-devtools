@@ -51,7 +51,7 @@ class ErrorLogQry extends Qry
         ];
     }
 
-    public function getError(string $id, string $type = 'error'): ErrorLogItem
+    public function getError(string $id, string $type = 'error'): ?ErrorLogItem
     {
         return $this->errorLogger->getError($id, $type);
     }

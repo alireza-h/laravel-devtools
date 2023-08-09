@@ -67,7 +67,8 @@ class ErrorLogCmd extends Cmd
             $this->createExceptionMessage(
                 $exception,
                 $errorCount,
-                $this->errorLogger->getId($exception)
+                $this->errorLogger->getId($exception),
+                $type
             )
         );
     }
@@ -89,14 +90,14 @@ class ErrorLogCmd extends Cmd
         ];
     }
 
-    private function createExceptionMessage(Throwable $exception, int $count, string $id): string
+    private function createExceptionMessage(Throwable $exception, int $count, string $id, string $type): string
     {
         return implode(
             PHP_EOL,
             [
                 '<!here>',
                 "Count: *$count*",
-                'Url: '.route('devtools.errors.preview', ['id' => $id]),
+                'Url: '.route('devtools.errors.preview', ['id' => $id, 'type' => $type]),
                 'Env: '."`{$this->env()}`",
                 'Message: `'.get_class($exception).'` , '.$exception->getMessage(),
                 "File: {$exception->getFile()}:{$exception->getLine()}",

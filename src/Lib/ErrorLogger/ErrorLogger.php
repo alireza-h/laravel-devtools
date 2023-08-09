@@ -15,7 +15,7 @@ abstract class ErrorLogger
 {
     protected const CLEAR_OLDER_THAN = 3600 * 72;
 
-    abstract public function getError(string $id, string $type = 'error'): ErrorLogItem;
+    abstract public function getError(string $id, string $type = 'error'): ?ErrorLogItem;
 
     abstract public function logError(Throwable $exception, string $type = 'error'): void;
 
@@ -61,7 +61,7 @@ abstract class ErrorLogger
                 $this->getIgnitionPreview($exception) :
                 $this->getWhoopsPreview($exception),
             0,
-            1000000
+            1500000
         );
     }
 
@@ -110,14 +110,12 @@ abstract class ErrorLogger
         }
     }
 
-    private function registerBlacklist(PrettyPageHandler $handler)
+    private function registerBlacklist(PrettyPageHandler $handler): void
     {
         foreach (config('app.debug_blacklist', []) as $key => $secrets) {
             foreach ($secrets as $secret) {
                 $handler->blacklist($key, $secret);
             }
         }
-
-        return $this;
     }
 }
