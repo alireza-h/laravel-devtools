@@ -10,7 +10,7 @@ abstract class ErrorLogger
 {
     protected const CLEAR_OLDER_THAN = 3600 * 72;
 
-    abstract public function getError(string $id, string $type = 'error'): ErrorLogItem;
+    abstract public function getError(string $id, string $type = 'error'): ?ErrorLogItem;
 
     abstract public function logError(Throwable $exception, string $type = 'error'): void;
 

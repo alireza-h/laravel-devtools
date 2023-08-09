@@ -19,9 +19,10 @@ class ErrorLogController extends Controller
 
     public function preview(Request $request, $id)
     {
-        return new Response(
-            (new ErrorLogQry())->getError($id, $request->get('type', 'error'))->preview ?? 'NOT FOUND!'
-        );
+        $error = (new ErrorLogQry())->getError($id, $request->get('type', 'error'));
+        abort_if($error === null || !$error->preview, 404);
+
+        return new Response($error->preview);
     }
 
     public function remove(Request $request, $id)

@@ -1,4 +1,5 @@
 <?php
+
 /** @noinspection PhpDynamicAsStaticMethodCallInspection */
 
 namespace AlirezaH\LaravelDevTools\Lib\ErrorLogger;
@@ -9,7 +10,7 @@ use Throwable;
 
 class DBErrorLogger extends ErrorLogger
 {
-    public function getError(string $id, string $type = 'error'): ErrorLogItem
+    public function getError(string $id, string $type = 'error'): ?ErrorLogItem
     {
         return $this->getErrorLogItem(
             $this->getErrorLogEntity($id),
